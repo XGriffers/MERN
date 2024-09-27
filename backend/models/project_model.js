@@ -9,5 +9,5 @@ const ProjectSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('Project', ProjectSchema);
+module.exports = mongoose.model('Project', ProjectSchema, 'projects');
 
