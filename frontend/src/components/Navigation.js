@@ -1,4 +1,4 @@
-// src/components/Navigation.js
+
 import React, { useState } from 'react';
 import './Navigation.css';
 import logo from '../assets/Color logo.svg';

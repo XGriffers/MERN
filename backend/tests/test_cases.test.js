@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const supertest = require('supertest');
-const app = require('../server'); // Adjust the path to your main app file
+const app = require('../server'); 
 const Contact = require('../models/contact_model');
 const Project = require('../models/project_model');
 

@@ -1,4 +1,4 @@
-// src/components/Skills.js
+
 import React from 'react';
 import './Skills.css';
 

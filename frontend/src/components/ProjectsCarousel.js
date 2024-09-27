@@ -1,4 +1,4 @@
-// src/components/ProjectsCarousel.js
+
 import React, { useState, useEffect } from 'react';
 import './ProjectCarousel.css';
 
@@ -12,7 +12,7 @@ const ProjectsCarousel = () => {
       try {
         // Simulated API call
         await new Promise(resolve => setTimeout(resolve, 1000));
-        // For now, we'll set an empty array. Later, replace this with your actual API call
+       
         setProjects([]);
         setIsLoading(false);
       } catch (error) {

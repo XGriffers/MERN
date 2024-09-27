@@ -1,5 +1,4 @@
 import React from 'react';
-import 'aos/dist/aos.css'; 
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import ProjectsCarousel from './components/ProjectsCarousel';
