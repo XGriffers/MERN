@@ -1,0 +1,154 @@
+
+.projects-carousel {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .projects-carousel h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .project-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .project-info {
+    padding: 20px;
+  }
+  
+  .project-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .project-info p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+  }
+  
+  .tech-tag {
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .project-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .project-link:hover {
+    background-color: #0056b3;
+  }
+  
+  .carousel-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .carousel-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: #007bff;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .carousel {
+      flex-direction: column;
+    }
+  
+    .project-card {
+      max-width: 100%;
+    }
+  
+    .carousel-button {
+      margin-top: 20px;
+    }
+  
+    .carousel-button.prev {
+      order: 2;
+    }
+  
+    .carousel-button.next {
+      order: 3;
+    }
+  
+    .carousel-dots {
+      order: 4;
+    }
+  }
+  .no-projects {
+    text-align: center;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .no-projects p {
+    font-size: 1.2rem;
+    color: #666;
+  }
