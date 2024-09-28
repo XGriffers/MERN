@@ -20,30 +20,31 @@ const ContactForm = () => {
     setIsSubmitting(true);
     setSubmitMessage('');
 
-    try {
-        const response = await fetch('http://localhost:5000/api/contact', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
-    
-        if (response.ok) {
-          const data = await response.json();
-          setSubmitMessage(data.message);
-          setFormData({ name: '', email: '', message: '' });
-        } else {
-          const errorData = await response.json();
-          setSubmitMessage(errorData.message || 'Failed to send message. Please try again.');
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        setSubmitMessage('An error occurred. Please try again later.');
-      } finally {
-        setIsSubmitting(false);
-      }
-    };
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+try {
+    const response = await fetch(`${apiUrl}/api/contact`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      setSubmitMessage(data.message);
+      setFormData({ name: '', email: '', message: '' });
+    } else {
+      const errorData = await response.json();
+      setSubmitMessage(errorData.message || 'Failed to send message. Please try again.');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    setSubmitMessage('An error occurred. Please try again later.');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <section className="contact-form" id="contact">
