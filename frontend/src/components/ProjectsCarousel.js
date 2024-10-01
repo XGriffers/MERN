@@ -8,10 +8,14 @@ const ProjectsCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
+  const apiUrl = process.env.NODE_ENV === 'production'
+  ? process.env.REACT_APP_API_URL_PROD
+  : process.env.REACT_APP_API_URL_DEV;
+
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL_PROD}/api/projects`);
+        const response = await fetch(`${apiUrl}/api/projects`);
         if (!response.ok) {
           throw new Error('Failed to fetch projects');
         }
