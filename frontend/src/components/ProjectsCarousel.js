@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import './ProjectCarousel.css';
 
+
 const ProjectsCarousel = () => {
   const [projects, setProjects] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -10,10 +11,12 @@ const ProjectsCarousel = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        // Simulated API call
-        await new Promise(resolve => setTimeout(resolve, 1000));
-       
-        setProjects([]);
+        const response = await fetch(`http://localhost:5000/api/projects`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch projects');
+        }
+        const data = await response.json();
+        setProjects(data);
         setIsLoading(false);
       } catch (error) {
         console.error('Error fetching projects:', error);
@@ -48,7 +51,7 @@ const ProjectsCarousel = () => {
           <div className="carousel">
             <button className="carousel-button prev" onClick={prevProject}>&lt;</button>
             <div className="project-card">
-              <img src={projects[currentIndex].imageUrl} alt={projects[currentIndex].title} />
+              
               <div className="project-info">
                 <h3>{projects[currentIndex].title}</h3>
                 <p>{projects[currentIndex].description}</p>
